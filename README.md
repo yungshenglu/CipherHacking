@@ -41,7 +41,13 @@ Use the concept of "chosen cyphertext attack" to hack the cipher. Because the pu
 * Step 6 - Use RSA algorithm to calculate the true plaintext
     * Use the function in Python module [**gmpy**](https://pypi.python.org/pypi/gmpy/1.15) to invert the chosen number before
     ```bash
-    # Installation
+    # Installation for Debian, Ubuntu
+    $ sudo apt-get install libgmp-dev
+    
+    # Installation for Fedora, RedHat and CentOS
+    $ yum install gmp-devel
+    
+    # Install gmpy
     $ pip install --upgrade pip
     $ pip install --upgrade gmpy
     ```
