@@ -18,14 +18,14 @@ def alarm(time):
     
 # Get public key
 def getpubkey():
-    with open('./pub.pem', 'rb') as f:
+    with open('../files/pub.pem', 'rb') as f:
         pub = f.read()
         key = RSA.importKey(pub)
     return key
 
 # Check if u send me the flag !
 def check(cipher_text, pubkey):
-    with open('./flag', 'r') as f:
+    with open('../files/flag', 'r') as f:
         flag = f.read().strip()
 
         # Use binascii.hexlify to transfer byte string into integer then use RSA to encrypt it
@@ -47,7 +47,7 @@ def check(cipher_text, pubkey):
 
 # decrypt the cipher_text you send
 def decrypt(cipher_text):
-    with open('./pub.pem', 'rb') as f:
+    with open('./files/pub.pem', 'rb') as f:
         pub = f.read()
         key = RSA.importKey(pub)
 

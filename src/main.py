@@ -10,7 +10,7 @@ import gmpy
 
 # Get public key
 def getpubkey():
-    with open('./pub.pem', 'rb') as f:
+    with open('../files/pub.pem', 'rb') as f:
         pub = f.read()
         key = RSA.importKey(pub)
     return key
@@ -34,7 +34,7 @@ if __name__ == '__main__':
     n = key.n
     e = key.e
 
-    with open('./flag.enc', 'rb') as f:
+    with open('../files/flag.enc', 'rb') as f:
         flag = f.read().strip()
 
         # Get the binary string from flag.enc
@@ -57,6 +57,6 @@ if __name__ == '__main__':
         Y = binascii.unhexlify(hex(C * X % n)[2 :])
 
         # Write into file - flag
-        file = open("flag", "a")
+        file = open("../out/flag", "a")
         file.write(Y)
         file.close()
