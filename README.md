@@ -1,16 +1,13 @@
-# Hacking the Cipher
-
-This repository is the assignment in NCTU course "Network Security".
-
----
-## Abstarct
+# Hacking the Cipher in Simulation
 
 Chosen cipher attack is an attack model that If an attacker can gather information by obtaining the decryption of cipertexts, attacker can then retrieve the plaintext without having the key. This repository is going to hack the cipher by RSA.
+
+> **NOTCIE:** This repository is the assignment in NCTU course "Network Security". If you are taking this course, please do not duplicate from this repository. All rights reserved.
 
 ---
 ## Description
 
-RSA is an important encryption technique first publicly invented by Ron Rivest, Adi Shamir, and Leonard Adleman in 1978. RSA security is based on the factoring problem -- the problem of factoring a large integer number into two prime numbers. In this project, each student is given a public key, an encrypted flag and a source code of the decrypter running on the server. Your goal is to use chosen ciphertext attack to retrieve the flag. The decrypt server is at `140.113.194.66`, port `8888`.
+RSA is an important encryption technique first publicly invented by *Ron Rivest*, *Adi Shamir*, and *Leonard Adleman* in 1978. RSA security is based on the factoring problem - the problem of factoring a large integer number into two prime numbers. In this project, each student is given a public key, an encrypted flag and a source code of the decrypter running on the server. Your goal is to use chosen ciphertext attack to retrieve the flag. The decrypt server is at `140.113.194.66`, port `8888`.
 
 ---
 ## Solutions
@@ -52,15 +49,15 @@ Use the concept of "chosen cyphertext attack" to hack the cipher. Because the pu
     ```
     * Calculate the true plaintext `Y` by RSA algorithm
     * Write the true plaintext into file `flag`
-    ```bash
-    # Flag
-    FLAG{S0_y0u_d0_know_th3_cho5en_c1ph3r_4ttack!}
-    ```
+       ```bash
+       # Flag
+       FLAG{S0_y0u_d0_know_th3_cho5en_c1ph3r_4ttack!}
+       ```
 
 ---
 ## File Description
 
-* `src/decrypt.py` - The part of decryption on the server 140.113.194.66:8888
+* `src/decrypt.py` - The part of decryption on the server `140.113.194.66:8888`
 * `src/main.py` - Solution to hack the cipher
 * `files/pub.pem` - The public key for RSA encryption
 * `files/flag.enc` - The encryption of flag
@@ -69,25 +66,33 @@ Use the concept of "chosen cyphertext attack" to hack the cipher. Because the pu
 ---
 ## Execution
 
-```bash
-# Execute the main.py for hacking the cipher
-$ python main.py
-[+] Opening connection to 140.113.194.66 on port 8888: Done
-[*] Closed connection to 140.113.194.66 port 8888
-
-# Show the true plaintext
-$ cat flag
-FLAG{S0_y0u_d0_know_th3_cho5en_c1ph3r_4ttack!}
-```
+1. Execute the `main.py`
+    ```bash
+    # Make sure your current directory is in "src/"
+    $ python main.py
+    ```
+    * If succeed, you will see the following result
+        ```bash
+        [+] Opening connection to 140.113.194.66 on port 8888: Done
+        [*] Closed connection to 140.113.194.66 port 8888
+        ```
+2. Show the true plaintext
+    ```bash
+    # Make sure your current directory is in "out/"
+    $ cat flag
+    FLAG{S0_y0u_d0_know_th3_cho5en_c1ph3r_4ttack!}
+    ```
 
 ---
-## Author
+## Contributor
+
+> **NOTICE:** You can follow the contributing process [CONTRIBUTING.md](CONTRIBUTING.md) to join me. I am very welcome any issue!
 
 * [David Lu](https://github.com/yungshenglu)
 
 ---
 ## License
 
-[GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
+> **NOTCIE:** This repository is the assignment in NCTU course "Network Security". If you are taking this course, please do not duplicate from this repository. All rights reserved.
 
-> This repository is the assignment in NCTU course "Network Security". If you are taking this course, please do not duplicate from this repository. All rights reserved.
+[GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
